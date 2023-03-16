@@ -1,0 +1,139 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 0px;
+  list-style-type: none;
+  background: #f32c52;
+  overflow: hidden;
+  transition: width 2s;
+}
+
+
+.conteiner .box-conteiner{
+  z-index: -1;
+  display: flex;
+  position: absolute;
+  width: 100%px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.box-conteiner div{
+  display: flex;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px;
+  transition: 1s;
+  z-index: -1;
+  width: 400px;
+  flex: 1;
+  height: 0px;
+  background-color: rgba(1,1 ,1, 0.5);
+  border-radius: 30px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.80);
+  align-items: flex-start;
+  justify-content: center;
+  color: #FFF;
+}
+
+.box-conteiner div:hover{
+  height: 430px;
+
+}
+
+
+
+.conteiner{
+
+  display: flex;
+  background: linear-gradient(-80deg,#6b11c0, #702ae2, #d50ce7, #6d0686de ) ;
+  background-size:400% 400%;
+  height: 100%;
+  animation: gradient 15s ease infinite;
+}
+
+
+
+
+@keyframes gradient {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+
+}
+
+.side-menu:hover {
+  width: 300px;
+}
+
+.side-menu li {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+  width: 300px;
+ 
+}
+
+
+.material-icons.md-48, .material-symbols-outlined.md-52 { font-size: 52px;}
+
+.material-icons.md-light {transition: 0.1s; margin-left: 0;}
+
+.side-menu li:hover .material-icons.md-light{ color: rgb(247, 0, 123); margin-left: -100px; }
+
+.material-icons{margin: 5px;}
+
+.material-symbols-outlined {
+  color: #050505;
+  position: fixed;
+  left: -6px;
+  transition: 1.5s;  
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+.side-menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .9rem;
+  text-decoration: none;
+  color: #FFF;
+  height: 100px;
+  transition: background-color .3s ease;
+}
+
+.side-menu li:hover {
+  background: #14081d;
+  flex: 1;
+}
+
+.side-menu:hover .material-symbols-outlined{
+  
+  opacity: 0%;
+
+
+}
