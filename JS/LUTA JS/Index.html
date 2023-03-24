@@ -5,18 +5,34 @@
     <header>
         <meta charset="UTF-8">
         <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="assets/css/style.css" rel="stylesheet"/>
-        <title>LUTA JS</title>
-
+        <link rel="stylesheet" href="./assets/css/style.css"/>
+        <title>GAME JS</title>
     </header>
 
 
-    <body>
+    <body class="planer">
+        <canvas class="canvas" id="canvas"></canvas>
+        
 
+        
 
-
-
-        <script src="Script.js"></script>
+        <script src="./assets/js/Script.js"></script>
+        <script>
+            const canvas = document.getElementById("canvas");
+            const context = canvas.getContext("2d");
+            // Cria um objeto Image para a imagem da nave
+            const imag = new Image();
+            imag.src = "./assets/imgs/Spaceship_tut.png";
+        
+            // Cria um objeto Nave e o renderiza no canvas
+            imag.onload = function () {
+                // Cria um objeto Personagem e o renderiza no canvas
+                const altura = 39;
+                const largura = 25;
+                const nave = new Personagem(50, 50, imag);
+                nave.render(context, largura, altura);
+            };
+          </script>
     </body>
 
 </html>
