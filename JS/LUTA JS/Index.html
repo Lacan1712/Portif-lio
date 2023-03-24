@@ -1,38 +1,28 @@
-<!--Aplicando conhecimentos em POO usando JS-->
-
 <!DOCTYPE html>
-<html lang = "pt-br">
-    <header>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/css/style.css"/>
-        <title>GAME JS</title>
-    </header>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>GAME JS</title>
+  </head>
+
+  <body class="planer">
+    
+            <img id = "ship" src="./assets/imgs/Spaceship_tut.png"/>
+            
 
 
-    <body class="planer">
-        <canvas class="canvas" id="canvas"></canvas>
+
+
+    <script src="./assets/js/Script.js"></script>
+    <script>
+        imagem = document.querySelector('#ship');
+        document.addEventListener('mousemove')
+        
         
 
-        
 
-        <script src="./assets/js/Script.js"></script>
-        <script>
-            const canvas = document.getElementById("canvas");
-            const context = canvas.getContext("2d");
-            // Cria um objeto Image para a imagem da nave
-            const imag = new Image();
-            imag.src = "./assets/imgs/Spaceship_tut.png";
-        
-            // Cria um objeto Nave e o renderiza no canvas
-            imag.onload = function () {
-                // Cria um objeto Personagem e o renderiza no canvas
-                const altura = 39;
-                const largura = 25;
-                const nave = new Personagem(50, 50, imag);
-                nave.render(context, largura, altura);
-            };
-          </script>
-    </body>
-
+    </script>
+  </body>
 </html>
