@@ -43,6 +43,7 @@ class Personagem{
 
     }
 
+    //Método que rotaciona o elemento de acordo com o mouse
     moveRotate(X, Y){
             //Capturar parametros da localização do mouse 
             this.mouseX = X,
@@ -57,12 +58,22 @@ class Personagem{
     
             //Definindo propriedade transforme ao elemento (nave)
             this.element.style.transform = 'rotate(' + angulo + 'deg)';
-    
-    
     }
     
     
+    //Método de movimento do elemento escutando evento do teclado
+    moveElement(newDirecao){
+
+        direcao = newDirecao;
+        atualPosicao = parseInt(this.element.style[direcao]) || 0;
+        novaPosicao = atualPosicao + 10;
+        this.element.style[direcao] = novaPosicao  + "px";
     
+    
+
+
+    }
+
 
 
 }

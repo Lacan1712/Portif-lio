@@ -24,44 +24,101 @@
         imagem = document.querySelector('#ship');
         nav = new Personagem(widthPage/2, heightPage/2, imagem);
         nav.position();
-        document.addEventListener('mousemove', function(e){
+        
 
-          /*Método moveRotate: 
-            var mouseX = e.pageX;
-            var mouseY = e.pageY;
+          
 
-            //Obtendo posição do centro do elemento (do caso a nave)
-            var naveX = imagem.offsetLeft + (imagem.offsetWidth / 2);
-            var naveY = imagem.offsetTop + (imagem.offsetHeight / 2);
+              /*Método moveRotate: 
+                var mouseX = e.pageX;
+                var mouseY = e.pageY;
 
-            //Calcular ângulo de rotação
-            var radianos = Math.atan2 (mouseY - naveY, mouseX - naveX);
-            var angulo = radianos * (180 / Math.PI);
+                //Obtendo posição do centro do elemento (do caso a nave)
+                var naveX = imagem.offsetLeft + (imagem.offsetWidth / 2);
+                var naveY = imagem.offsetTop + (imagem.offsetHeight / 2);
 
-            //Definindo propriedade transforme ao elemento (nave)
-            imagem.style.transform = 'rotate(' + angulo + 'deg)';*/
+                //Calcular ângulo de rotação
+                var radianos = Math.atan2 (mouseY - naveY, mouseX - naveX);
+                var angulo = radianos * (180 / Math.PI);
+
+                //Definindo propriedade transforme ao elemento (nave)
+                imagem.style.transform = 'rotate(' + angulo + 'deg)';*/
+                
+
+                /*Função onMove*/
+                function onMove(e){
+
+                  var mouseX = e.pageX;
+                  var mouseY = e.pageY;
+
+                  nav.moveRotate(mouseX, mouseY);
+
+                }
+
+                function sureMouse(e){
+
+                  var mouseX = e.pageX;
+                  var mouseY = e.pageY;
+
+                  imagem.style.top = mouseY + "px";
+                  imagem.style.left = mouseX + "px";
+
+
+                }
+
+                //Controlador para rotacionar o mouse apenas quando ocorrer o evento 'mousedown'
+                document.addEventListener('mousedown', function(e){
+                  e.preventDefault();
+                  if(e.button === 2){ //boão esquerdo é pressionado
+                    
+                    document.addEventListener('mousemove', onMove);
+                  }
+
+                });
+
+                document.addEventListener('mouseup', function(e){
+                  e.preventDefault();
+                  if(e.button === 2){//botão esquerdo e solto
+                   
+                    document.removeEventListener('mousemove', onMove);
+                  }
+
+                });
+                
+                //Controlador para mover o eixo X e Y da imagem ao pressionar o botão esquerdo do mouse
+                
+                document.addEventListener('mousedown',function(e){
+
+                  if(e.button === 0){
+                    document.addEventListener('mousemove', sureMouse);
+                  }
+
+                });
+
+
+                document.addEventListener('mouseup',function(e){
+
+                if(e.button === 0){
+                  document.removeEventListener('mousemove', sureMouse);
+                }
+
+                });
+
+
+                //Remove comportamento do botão direito
+                document.addEventListener('contextmenu', function(event) {
+                   event.preventDefault();
+                });
+
+                
+                
+                
+                
+                
+                
+                
+           
             
-            var mouseX = e.pageX;
-            var mouseY = e.pageY;
-            nav.moveRotate(mouseX,mouseY);
-        });
-        
-        document,addEventListener('keydown',function(e){
-            if(e.key === 'w'){
-              nav.setPositionY(nav.getPositionY() + 10);
-              
-            }
-
-
-
-
-
-        });
-
-        
-        
-
-
+           
     </script>
   </body>
 </html>
