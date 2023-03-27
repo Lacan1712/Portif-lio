@@ -17,8 +17,47 @@
 
     <script src="./assets/js/Script.js"></script>
     <script>
+        var widthPage = document.documentElement.clientWidth;
+        var heightPage = document.documentElement.clientHeight;
+        
+        
         imagem = document.querySelector('#ship');
-        document.addEventListener('mousemove')
+        nav = new Personagem(widthPage/2, heightPage/2, imagem);
+        nav.position();
+        document.addEventListener('mousemove', function(e){
+
+          /*Método moveRotate: 
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+
+            //Obtendo posição do centro do elemento (do caso a nave)
+            var naveX = imagem.offsetLeft + (imagem.offsetWidth / 2);
+            var naveY = imagem.offsetTop + (imagem.offsetHeight / 2);
+
+            //Calcular ângulo de rotação
+            var radianos = Math.atan2 (mouseY - naveY, mouseX - naveX);
+            var angulo = radianos * (180 / Math.PI);
+
+            //Definindo propriedade transforme ao elemento (nave)
+            imagem.style.transform = 'rotate(' + angulo + 'deg)';*/
+            
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+            nav.moveRotate(mouseX,mouseY);
+        });
+        
+        document,addEventListener('keydown',function(e){
+            if(e.key === 'w'){
+              nav.setPositionY(nav.getPositionY() + 10);
+              
+            }
+
+
+
+
+
+        });
+
         
         
 
