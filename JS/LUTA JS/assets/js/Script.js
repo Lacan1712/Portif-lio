@@ -44,10 +44,10 @@ class Personagem{
     }
 
     moveRotate(X, Y){
-            //Capturar parametros da localização do mouse
+            //Capturar parametros da localização do mouse 
             this.mouseX = X,
             this.mouseY = Y;
-            //Obetendo ponto do centro do elemento
+            //Obtendo ponto do centro do elemento
             var naveX = this.element.offsetLeft + (this.element.offsetWidth / 2);
             var naveY = this.element.offsetTop + (this.element.offsetHeight / 2);
     
