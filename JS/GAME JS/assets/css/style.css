@@ -7,8 +7,8 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    cursor: none;
-    user-select: none;;
+    
+    user-select: none;
     
 
 }
@@ -16,7 +16,9 @@ body{
 #ship{
     position: relative;
     transition-property:top, left, right;
-    transition-duration: 0.1s;
+    transition-duration: 0.2s;
     scale: 0.7;
     user-select: none;
+    margin: 0px;
+    padding: 0px;
 }

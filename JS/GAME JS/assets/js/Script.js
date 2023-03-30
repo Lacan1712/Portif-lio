@@ -61,18 +61,7 @@ class Personagem{
     }
     
     
-    //Método de movimento do elemento escutando evento do teclado
-    moveElement(newDirecao){
-
-        direcao = newDirecao;
-        atualPosicao = parseInt(this.element.style[direcao]) || 0;
-        novaPosicao = atualPosicao + 10;
-        this.element.style[direcao] = novaPosicao  + "px";
     
-    
-
-
-    }
 
 
 

@@ -67,41 +67,35 @@
 
                 //Controlador para rotacionar o mouse apenas quando ocorrer o evento 'mousedown'
                 document.addEventListener('mousedown', function(e){
-                  e.preventDefault();
+                  
                   if(e.button === 2){ //boão esquerdo é pressionado
-                    
+
                     document.addEventListener('mousemove', onMove);
+                    document.removeEventListener('mousemove', sureMouse);
+
                   }
-
-                });
-
-                document.addEventListener('mouseup', function(e){
-                  e.preventDefault();
-                  if(e.button === 2){//botão esquerdo e solto
-                   
-                    document.removeEventListener('mousemove', onMove);
-                  }
-
                 });
                 
-                //Controlador para mover o eixo X e Y da imagem ao pressionar o botão esquerdo do mouse
-                
-                document.addEventListener('mousedown',function(e){
-
-                  if(e.button === 0){
-                    document.addEventListener('mousemove', sureMouse);
-                  }
-
-                });
-
-
+                //Controlador que define para seguir o ponteiro quando ocorrer o evento 'mouseup'
                 document.addEventListener('mouseup',function(e){
 
-                if(e.button === 0){
-                  document.removeEventListener('mousemove', sureMouse);
-                }
+                  if(e.button === 2){//botão esquerdo é solto
+                    
+                    document.addEventListener('mousemove',sureMouse);
+                    document.removeEventListener('mousemove', onMove);
+                  
+                  }
 
                 });
+               
+                
+                //Define que a nave siga o ponteiro do mouse
+                document.addEventListener('mousemove', sureMouse);
+
+                
+
+
+               
 
 
                 //Remove comportamento do botão direito
