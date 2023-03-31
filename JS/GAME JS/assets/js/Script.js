@@ -59,10 +59,37 @@ class Personagem{
             //Definindo propriedade transforme ao elemento (nave)
             this.element.style.transform = 'rotate(' + angulo + 'deg)';
     }
-    
-    
-    
 
+}
+
+//Classe do meteoro
+class Meteor{
+
+    constructor(x,y,image){
+        this.positionX = x;
+        this.positionY = y;
+        this.element = image;
+    }
+
+
+    cair(){
+
+        //Obtar largura e altura do elemento
+        var paiWidth = this.element.parentNode.offsetWidth;
+        var paiHeight = this.element.parentNode.offsetHeight;
+
+        //Definindo posições aleatórias
+        var randomLeft = Math.floor(Math.random() * (paiWidth - 50) );
+        var randomTop = Math.floor(Math.random() * (paiHeight - 50));
+
+        //Atualiza posição do meteoro
+        this.element.style.left = randomLeft + "px";
+        this.element.style.top = randomTop + "px";
+
+       
+
+        
+    }
 
 
 }

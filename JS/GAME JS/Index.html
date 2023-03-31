@@ -10,6 +10,8 @@
   <body class="planer">
     
             <img id = "ship" src="./assets/imgs/Spaceship_tut.png"/>
+            <img id = "meteor" src="./assets/imgs/meteor.png"/>
+            
             
 
 
@@ -21,12 +23,30 @@
         var heightPage = document.documentElement.clientHeight;
         
         
-        imagem = document.querySelector('#ship');
+        const imagem = document.querySelector('#ship');
+        const meteor = document.querySelector('#meteor');
+        
+      
         nav = new Personagem(widthPage/2, heightPage/2, imagem);
         nav.position();
+
+        met = new Meteor(50,50,meteor);
+        
+       
         
 
-          
+       
+       
+        
+
+        
+
+
+        
+        
+        
+        
+       
 
               /*Método moveRotate: 
                 var mouseX = e.pageX;
@@ -53,7 +73,7 @@
                   nav.moveRotate(mouseX, mouseY);
 
                 }
-
+                /*Função para imagem seguir o mouse*/
                 function sureMouse(e){
 
                   var mouseX = e.pageX;
@@ -92,10 +112,6 @@
                 //Define que a nave siga o ponteiro do mouse
                 document.addEventListener('mousemove', sureMouse);
 
-                
-
-
-               
 
 
                 //Remove comportamento do botão direito
